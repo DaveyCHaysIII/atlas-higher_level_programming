@@ -9,7 +9,7 @@ else:
 if last_digit > 5:
     message = "and is greater than 5"
 elif last_digit == 0:
-    message = "and is zero"
+    message = "and is 0"
 else:
     message = "and is less than 6 and not 0"
 
