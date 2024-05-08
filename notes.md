@@ -18,3 +18,4 @@ lists are very similar to arrays but are growable and can contain w/e different 
 list = [1, 2, "string", 1.234]
 
 
+git add * test
