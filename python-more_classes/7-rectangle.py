@@ -11,7 +11,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-
+        self.print_symbol = "#"
         Rectangle.number_of_instances += 1
 
     @property
@@ -64,7 +64,7 @@ class Rectangle:
         else:
             rect = ""
             for _ in range(self.__height):
-                rect += "{}".format(Rectangle.print_symbol) * self.__width
+                rect += "{}".format(self.print_symbol) * self.__width
                 if _ != self.__height - 1:
                     rect += '\n'
             return rect
