@@ -57,5 +57,7 @@ class Rectangle:
         else:
             rect = ""
             for _ in range(self.__height):
-                rect += "#" * self.__width + '\n'
+                rect += "#" * self.__width
+                if _ != self.__height - 1:
+                    rect += '\n'
             return rect
