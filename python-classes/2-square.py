@@ -3,6 +3,8 @@
 
 
 class Square:
+    """class with attr size that MUST be 0"""
+
     try:
         def __init__(self, size=0):
             self.size = size
