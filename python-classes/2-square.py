@@ -7,7 +7,7 @@ class Square:
 
     try:
         def __init__(self, size=0):
-            self.size = size
+            self.__size = size
     except TypeError:
         print("size must be an integer")
     except ValueError:
