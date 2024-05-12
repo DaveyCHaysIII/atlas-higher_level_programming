@@ -30,7 +30,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def heigh(self, value):
+    def height(self, value):
         """setter for height"""
 
         if not isinstance(value, int):
@@ -38,3 +38,7 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+r = Rectangle(2, 3)
+
+
