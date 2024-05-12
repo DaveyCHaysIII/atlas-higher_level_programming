@@ -27,3 +27,22 @@ df{ - deletes from cursor up to and including squirley brace
 dt{ - deletes from cursor up to but not including squirley brace
 yf) - copies from cursor up to and including closed paren (copy a whole function name!)
 up to and including { hello from squirrley }
+
+class
+fields
+methods
+both are the class attributes
+instance variables belong to that instance (self.whatever)
+class variables belong to the class (regular variables)
+@classmethod
+def howmany(cls) - that cls is a decorator that shows it is a class method
+
+-subclasses-
+class Schoolmember:
+    def __init__(self, name, age)
+...
+
+class Teacher(Schoolmember):
+    def __init__(self, name, age, salary)
+        Schoolmember.__init__(self, name, age)
+        ...
