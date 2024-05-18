@@ -4,21 +4,21 @@ Test for adding two integers
 
 ``add_integer`` returns the sum of its arguments. For numbers, that value is equivilent to the ``+`` operator.
 
-    >>>add_integer = __import__('0-add_integer.py').add_integer
+>>>add_integer = __import__('0-add_integer.py').add_integer
 
 Adding two positive integers 1 and 2
 
-    >>>add_integer(1, 2)
-    3
+>>>add_integer(1, 2)
+3
 
 Adding a positive and a negative integer, -1 and 1
 
-    >>>add_integer(-1, 1)
-    0
+>>>add_integer(-1, 1)
+0
 
 Passing a string "hello" into the function and adding integer 1
 
-    >>>add_integer("hello", 1)
-    Traceback (most recent call last):
-	      ...
-    TypeError: a must be an integer
+>>>add_integer("hello", 1)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
