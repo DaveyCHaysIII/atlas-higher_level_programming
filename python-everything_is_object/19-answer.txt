@@ -1,3 +1,0 @@
-def copy_list(a_list):
-    b = [a:]
-    return b
