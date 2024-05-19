@@ -36,3 +36,11 @@ Traceback (most recent call last):
 ...
 TypeError: john must be an integer
 
+
+'Test of function area()'
+::
+>>> area = IntVal()
+>>> area.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
