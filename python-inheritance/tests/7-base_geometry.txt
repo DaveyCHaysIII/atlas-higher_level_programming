@@ -1,0 +1,38 @@
+'Tests for 7-base_geometry.py'
+
+'Testing the function integer_validator() of class BaseGeometry()'
+
+>>> IntVal = __import__("7-base_geometry").BaseGeometry
+
+
+'Testing values under 0'
+::
+>>> IntVal.integer_validator("name", "john", 0)
+Traceback (most recent call last):
+...
+ValueError: john must be greater than 0
+>>> IntVal.integer_validator("name", "john", -5)
+Traceback (most recent call last):
+...
+ValueError: john must be greater than 0
+>>> IntVal.integer_validator("name", "john", -1)
+Traceback (most recent call last):
+...
+ValueError: john must be greater than 0
+
+
+'Testing values other than integer'
+::
+>>> IntVal.integer_validator("name", "john", 0.5)
+Traceback (most recent call last):
+...
+ValueError: john must be an integer
+>>> IntVal.integer_validator("name", "john", None)
+Traceback (most recent call last):
+...
+ValueError: john must be an integer
+>>> IntVal.integer_validator("name", "john", "john")
+Traceback (most recent call last):
+...
+ValueError: john must be an integer
+
