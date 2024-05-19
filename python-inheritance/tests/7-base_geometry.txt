@@ -30,6 +30,9 @@ Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+'Testing correct input'
+>>>a.integer_validator("age", 1)
+
 'Testing zero value passed'
 ::
 >>> a.integer_validator("age", 0)
@@ -39,7 +42,7 @@ ValueError: age must be greater than 0
 
 'Testing negative value passed'
 ::
->>> a.integer_validator("age", 0)
+>>> a.integer_validator("age", -1)
 Traceback (most recent call last):
 ...
 ValueError: age must be greater than 0
