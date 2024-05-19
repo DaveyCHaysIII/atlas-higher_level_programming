@@ -9,7 +9,7 @@ class Square(Rectangle):
     Class to describe Squares
     inherits from Rectangles
 
-    private args: 
+    private args:
     size - size of Square
     """
     def __init__(self, size):
