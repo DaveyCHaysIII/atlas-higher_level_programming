@@ -46,3 +46,13 @@ class Teacher(Schoolmember):
     def __init__(self, name, age, salary)
         Schoolmember.__init__(self, name, age)
         ...
+
+
+//////////////////////////////////////////
+
+
+with open("myfile.txt") as f:
+    for line in f:
+        print(line, end="")  ##opens, prints all lines and closes myfile.txt
+
+f = open(filename, mode, encoding)
