@@ -1,62 +1,72 @@
 'Tests for 7-base_geometry.py'
 
-'Testing the function integer_validator() of class BaseGeometry()'
+'Testing the functions integer_validator() and area() of class BaseGeometry()'
 
->>> IntVal = __import__("7-base_geometry").BaseGeometry
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> a = BaseGeometry()
 
+//Function: area()
 
-'Testing values under 0'
-::
->>> IntVal.integer_validator("name", "john", 0)
-Traceback (most recent call last):
-...
-ValueError: john must be greater than 0
->>> IntVal.integer_validator("name", "john", -5)
-Traceback (most recent call last):
-...
-ValueError: john must be greater than 0
->>> IntVal.integer_validator("name", "john", -1)
-Traceback (most recent call last):
-...
-ValueError: john must be greater than 0
-
-
-'Testing values other than integer'
-::
->>> IntVal.integer_validator("name", "john", 0.5)
-Traceback (most recent call last):
-...
-TypeError: john must be an integer
-
->>> IntVal.integer_validator("name", "john", None)
-Traceback (most recent call last):
-...
-TypeError: john must be an integer
-
->>> IntVal.integer_validator("name", "john", "14")
-Traceback (most recent call last):
-...
-TypeError: john must be an integer
-
->>> IntVal.integer_validator("name", "john", [1, 2, 3])
-Traceback (most recent call last):
-...
-TypeError: john must be an integer
-
->>> IntVal.integer_validator("name", "john", (4, 2))
-Traceback (most recent call last):
-...
-TypeError: john must be an integer
-
->>> IntVal.integer_validator("name", "john", {5, 5})
-Traceback (most recent call last):
-...
-TypeError: john must be an integer
-
-'Test of function area()'
-::
->>> area = IntVal()
->>> area.area()
+'Testing area() base case'
+>>> a.area()
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
+
+
+//Function: integer_validator()
+
+'Testing base case'
+::
+>>> a.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+'Testing no number passed'
+::
+>>> a.integer_validator("age")
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+'Testing zero value passed'
+::
+>>> a.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+'Testing negative value passed'
+::
+>>> a.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+'Testing alternative type passed'
+::
+>>> a.integer_validator("age", 0.5)
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+::
+>>> a.integer_validator("age", "1")
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+::
+>>> a.integer_validator("age", [1, 2])
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+::
+>>> a.integer_validator("age", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+::
+>>> a.integer_validator("age", {1, 2})
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
