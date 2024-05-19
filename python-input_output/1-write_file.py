@@ -12,4 +12,4 @@ def write_file(filename="", text=""):
     Returns: nothing
     """
     with open(filename, 'w') as f:
-        f.write(text)
+        return f.write(text)
