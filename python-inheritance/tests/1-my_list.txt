@@ -2,7 +2,7 @@
 
 'Testing the function print_sorted() of class MyList'
 
->>> MyList = __import__("1-my_list.py").MyList
+>>> MyList = __import__("1-my_list").MyList
 
 'Testing random integers'
 
