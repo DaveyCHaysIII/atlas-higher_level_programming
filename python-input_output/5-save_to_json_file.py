@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """write json to file"""
 import json
+import os
 
 
 def save_to_json_file(obj, filename):
@@ -10,5 +11,6 @@ def save_to_json_file(obj, filename):
     obj- the object to write
     Returns- no return"""
     dat = json.dumps(obj)
-    with open(filename, mode="w", encoding="utf-8") as f:
-        f.write(dat)
+    if os.access('my_file', os.W_OK):
+        with open(filename, mode="w", encoding="utf-8") as f:
+            f.write(dat)
