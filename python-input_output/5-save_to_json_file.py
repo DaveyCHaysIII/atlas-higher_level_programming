@@ -11,6 +11,6 @@ def save_to_json_file(obj, filename):
     obj- the object to write
     Returns- no return"""
     dat = json.dumps(obj)
-    if os.access('my_file', os.W_OK):
+    if os.access(filename, os.W_OK):
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(dat)
