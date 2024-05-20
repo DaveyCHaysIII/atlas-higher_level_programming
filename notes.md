@@ -56,3 +56,6 @@ with open("myfile.txt") as f:
         print(line, end="")  ##opens, prints all lines and closes myfile.txt
 
 f = open(filename, mode, encoding)
+
+
+/////////////
