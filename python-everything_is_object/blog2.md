@@ -59,30 +59,32 @@ Saying that immutable objects are simply unchangable values however is unfortuna
 
 ## Memory? I thought python was high level!
 ***
-Remember that handy id() function from before? If you call it on a mutable Object, the id remains the same no matter how many times you mutate it, that id is still the same Object. Not so with Immutable Objects - python will create an entire new object instead. Any time you pass a mutable into a function the mutable will change, while when you pass an immutable to a function a new Object will be created. 
+Remember that handy ```id()``` function from before? If you call it on a mutable Object, the id remains the same no matter how many times you mutate it, that id is still the same Object. Not so with Immutable Objects - python will create an entire new object instead. Any time you pass a mutable into a function the mutable will change, while when you pass an immutable to a function a new Object will be created. 
 
 ```python
 ## Mutable Data Types & ID
 my_list = [1, 2, 3, 4, 5]
-id(my_list)
+id_one = id(my_list)          ## returns 0x7F957E7B6676
 my_list[0] = 4
-id(my_list)
+id_two = id(my_list)          ## returns 0x7F957E7B6676
+id_one == id_two              ## returns True
 
 ## Immutable Data Types & ID
 my_string = "string"
-id(my_string)
+id_one = id(my_string)        ## returns 0x7F957E7C8640
 my_string = "strang"
-id(my_string)
+id_two = id(my_string)        ## returns 0x7F957E7C8980
+id_one == id_two              ## returns False
 ```
-Python uses a method called "interning" as a method of storing values like integers and commonly used strings to a quickly addressable space in memory, a handy little optimization. Another example of memory optimization with Immutable objects is called integer preallocation- see that's a fancy pants $5 term for saving all the most commonly used integers to an extremely fast place in memory, represented by the constants NSMALLPOSINTS and NSMALLNEGINTS, collectively representing the values -6 through 256. In terms of speed, addressing the integer 256 blows addessing the integer 257 out of the water!
+Python uses a method called "interning" as a method of storing values like integers and commonly used strings to a quickly addressable space in memory, a handy little optimization. Another example of memory optimization with Immutable objects is called integer preallocation- see that's a fancy pants $5 term for saving all the most commonly used integers to an extremely fast place in memory, represented by the constants NSMALLPOSINTS and NSMALLNEGINTS, collectively representing the values -6 through 256. In terms of speed, addressing the integer 256 blows addressing the integer 257 out of the water!
 
 ## I heard about a weird exception...
 ***
-Its true, Frozen Sets and Tuples, while immutable, can contain mutable data (ex. a tuple containing two lists, which are mutable). This works as intended, and was totally intentional. Intentionally. 
+Its true, *frozen sets* and *tuples*, while immutable, can contain mutable data (ex. a tuple containing two lists, which are mutable). This works as intended, and was totally intentional. Intentionally. 
 
 ## Assignment, Reference, Alias - what's in a name...
 ***
-It turns out that names don't really matter much in python. There's nothing stopping me from calling an Object by the name "my_object", and then claiming "your_object=my_object". Neither name changes the fact that they are both representations of the uniquely id'd Object in question. In fact, giving an Object another name in such a way is known as an Alias, like a nickname for the Object. Nothing actually changes with the data by doing this. 
+It turns out that names don't really matter much in python. There's nothing stopping me from calling an Object by the name ```my_object```, and then claiming ```your_object=my_object```. Neither name changes the fact that they are both representations of the uniquely id'd Object in question. In fact, giving an Object another name in such a way is known as an Alias, like a nickname for the Object. Nothing actually changes with the data by doing this. 
 
 ## Any other weird things I should know about the topic?
 ***
