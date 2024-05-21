@@ -9,7 +9,7 @@ Python lumps data types into two big groups: Primitives and Objects. Depending o
 
 Variables used to be simple, their names were pretty window dressing for a memory address, a convenient little box perfectly and lovingly shaped to hold your data. 
 
-```C
+```c
 int d = 0;
 char school[] = "school";
 school[d] = 'a';
