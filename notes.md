@@ -59,3 +59,11 @@ f = open(filename, mode, encoding)
 
 
 /////////////
+
+*args - args like normal
+*kwargs - key word args
+
+for arg in args:
+##do whatever
+
+for kwarg in kwargs:
