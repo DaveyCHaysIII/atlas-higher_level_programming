@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """class Rectangle"""
-Base = __import__('base').Base
+
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -21,6 +22,10 @@ class Rectangle(Base):
         def width(self, value):
             """set width"""
             self.__width = value
+            if not isinstance(value, int):
+                raise TypeError("width must be an integer")
+            elif value <= 0:
+                raise ValueError("width must be > 0")
 
         @property
         def height(self):
@@ -31,6 +36,10 @@ class Rectangle(Base):
         def height(self, value):
             """set height"""
             self.__height = value
+            if not isinstance(value, int):
+                raise TypeError("height must be an integer")
+            if value <= 0:
+                raise ValueError("height must be > 0")
 
         @property
         def x(self):
@@ -41,6 +50,10 @@ class Rectangle(Base):
         def x(self, value):
             """set x"""
             self.__x = value
+            if not isinstance(value, int):
+                raise TypeError("x must be an integer")
+            if value < 0:
+                raise ValueError("x must be > 0")
 
         @property
         def y(self):
@@ -51,3 +64,7 @@ class Rectangle(Base):
         def y(self, value):
             """set y"""
             self.__y = value
+            if not isinstance(value, int):
+                raise TypeError("y must be an integer")
+            elif value < 0:
+                raise ValueError("y must be > 0")
