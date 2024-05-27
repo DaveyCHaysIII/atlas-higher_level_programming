@@ -79,3 +79,20 @@ class Rectangle(Base):
     def area(self):
         """Returns width * height"""
         return self.__width * self.__height
+    
+    def display(self):
+        """displays a pictographic version of rectangle"""
+        symbol = '#'
+        blank = " "
+        if self.__y > 1:
+            print("\n" * (self.__y - 1))
+        elif self.__y == 1:
+            print("")
+        for i in range(0, self.__height):
+           print("{}".format((blank * self.__x) + (symbol * self.__width), end=""))
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        pass
