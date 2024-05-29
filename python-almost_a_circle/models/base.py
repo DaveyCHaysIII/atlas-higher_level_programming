@@ -42,6 +42,7 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """creates new instance with all attrs set"""
         if cls.__name__ == "Rectangle":
