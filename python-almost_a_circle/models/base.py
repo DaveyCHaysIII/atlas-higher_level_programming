@@ -33,7 +33,7 @@ class Base:
         if list_objs is not None:
             jsonlist = [obj.to_dictionary() for obj in list_objs]
         with open(filename, 'w') as f:
-            json.dump(jsonlist, f)
+            Base.to_json_string(jsonlist)
 
     @staticmethod
     def from_json_string(json_string):
