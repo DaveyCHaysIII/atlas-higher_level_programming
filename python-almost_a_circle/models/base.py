@@ -45,8 +45,10 @@ class Base:
     def create(cls, **dictionary):
         """creates new instance with all attrs set"""
         if cls.__name__ == "Rectangle":
-            new = cls(1, 1)
+            new_inst = cls(1, 1)
         if cls.__name__ == "Square":
-            new = cls(1)
-        new.update(**dictionary)
-        return new
+            new_inst = cls(1)
+
+        new_inst.update(**dictionary)
+
+        return new_inst
