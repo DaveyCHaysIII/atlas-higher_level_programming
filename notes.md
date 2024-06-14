@@ -67,3 +67,16 @@ for arg in args:
 ##do whatever
 
 for kwarg in kwargs:
+553/669 (82%, not bad!)
+
+
+1- 83pts (none)
+19-33pts (none)
+
+current grade: 55%
+possible partials: 145 (21%, 76% total)
+possible nones :    70 (10%, 86% total)
+
+//////////////////////////////
+
+import cmd
