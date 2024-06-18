@@ -19,7 +19,7 @@ def list_states(username, password, database):
 
     cursor.execute(
          "SELECT cities.id, cities.name, states.name "
-         + "FROM cities INNER JOIN cities "
+         + "FROM states INNER JOIN cities "
          + "ON cities.state_id = states.id "
          + "ORDER BY cities.id"
          )
