@@ -19,7 +19,8 @@ def list_states(username, password, database, statename):
 
     query = "SELECT * FROM states WHERE name = %s ORDER BY id"
     cursor.execute(
-        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id".format(statename))
+        "SELECT * FROM states WHERE BINARY" + 
+        "name = '{}' ORDER BY id".format(statename))
 
     rows = cursor.fetchall()
 
