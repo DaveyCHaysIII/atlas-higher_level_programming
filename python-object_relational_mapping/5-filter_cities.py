@@ -34,7 +34,7 @@ def list_states(username, password, database, statename):
             first = False
         else:
             print(', ' + row[0], end="")
-        print()
+    print()
 
     cursor.close()
     db.close()
