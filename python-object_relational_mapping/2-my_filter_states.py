@@ -17,7 +17,8 @@ def list_states(username, password, database, statename):
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name = '{}'".format(statename))
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id"
+    cursor.execute(query, (statename,))
 
     rows = cursor.fetchall()
 
@@ -29,9 +30,9 @@ def list_states(username, password, database, statename):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("Usage: ./script.py"
-              " <mysql username> <mysql password> <database name>")
+              + " <mysql username> <mysql password> <database name>")
         sys.exit(1)
 
     username = sys.argv[1]
