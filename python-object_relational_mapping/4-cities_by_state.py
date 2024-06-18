@@ -18,7 +18,10 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     cursor.execute(
-         "SELECT id, name FROM cities ORDER BY cities.id ASC"
+         "SELECT cities.id, cities.name, states.name "
+         + "FROM cities INNER JOIN cities "
+         + "ON cities.state_id = states.id "
+         + "ORDER BY cities.id"
          )
 
     rows = cursor.fetchall()
