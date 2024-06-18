@@ -23,7 +23,7 @@ def list_states(username, password, database, statename):
              + "WHERE states.name = %s"
              + "ORDER BY cities.id")
 
-    cursor.execute(query, (statename,))
+    cursor.execute(query, statename)
 
     rows = cursor.fetchall()
 
