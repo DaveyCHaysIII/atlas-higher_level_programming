@@ -23,12 +23,18 @@ def list_states(username, password, database, statename):
              + "WHERE states.name = %s"
              + "ORDER BY cities.id")
 
-    cursor.execute(query, statename)
+    cursor.execute(query, (statename,))
 
     rows = cursor.fetchall()
 
+    first = True
     for row in rows:
-        print(row)
+        if first:
+            print(row, end="")
+            first = False
+        else:
+            print(', ' + row[0], end="")
+        print()
 
     cursor.close()
     db.close()
