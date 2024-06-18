@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""write a script that lists all states that start with N from hbtn_0e_0_usa"""
+"""write a script that lists all cities from hbtn_0e_4_usa"""
 
 import sys
 import MySQLdb
@@ -10,7 +10,7 @@ def list_states(username, password, database):
 
     cursor = db.cursor();
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT id, name FROM cities ORDER BY cities.id ASC")
 
     rows = cursor.fetchall()
 
