@@ -1,4 +1,4 @@
---write a script that lists all cities in database
+-- write a script that lists all cities in database
 SELECT id, name, states.name 
 FROM cities
 LEFT JOIN states ON cities.state_id = state_id
