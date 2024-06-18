@@ -17,7 +17,7 @@ def list_states(username, password, database):
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%'")
 
     rows = cursor.fetchall()
 
