@@ -30,7 +30,7 @@ def list_states(username, password, database, statename):
     first = True
     for row in rows:
         if first:
-            print(row, end="")
+            print(row[0], end="")
             first = False
         else:
             print(', ' + row[0], end="")
