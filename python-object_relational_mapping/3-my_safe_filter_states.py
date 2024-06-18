@@ -29,9 +29,9 @@ def list_states(username, password, database, statename):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 4:
         print("Usage: ./script.py"
-              " <mysql username> <mysql password> <database name>")
+              + " <mysql username> <mysql password> <database name>")
         sys.exit(1)
 
     username = sys.argv[1]
