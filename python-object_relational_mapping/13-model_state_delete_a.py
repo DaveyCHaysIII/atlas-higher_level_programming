@@ -20,7 +20,7 @@ def list_states(username, password, db):
 
     for state in states:
         session.delete(state)
-        session.commit()
+    session.commit()
     session.close()
 
 
