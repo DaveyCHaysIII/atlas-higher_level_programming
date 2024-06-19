@@ -19,7 +19,7 @@ def list_states(username, password, db, state_search):
     states = session.query(State).filter(State.name == state_search).first()
 
     if states:
-        print(f"{states.id}: {states.name}")
+        print(f"{states.id}")
     else:
         print("Not found")
 
