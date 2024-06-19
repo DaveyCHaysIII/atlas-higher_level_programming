@@ -17,13 +17,14 @@ def list_states(username, password, db, search):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = (session.query(City, State)
-              .filter(City.state_id == State.id).all())
+    result = (session.query(City)
+              .join(State).order_by(City.id).all())
 
     for city, state in result:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     session.close()
+
 
 if __name__ == "__main__":
     username, password, db, search = (
